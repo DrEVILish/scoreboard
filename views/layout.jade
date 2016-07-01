@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    meta(name='viewport' content='width=device-width,initial-scale=1,shrink-to-fit=no')
+    meta(charset='utf-8')
+    meta(http)
+    link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css')
+    link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/chartist/0.9.7/chartist.min.css')
+    link(rel='stylesheet' href='/css/daterangepicker.css')
+    link(rel='stylesheet' href='/css/dashboard.css')
+    link(rel='stylesheet' href='/css/gly-spin.css')
+    link(rel='stylesheet' href='/css/custo.css')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+    script(src='/js/dist/bundle.js')
+    //- script(src='//cdnjs.cloudflare.com/ajax/libs/chartist/0.9.7/chartist.min.js')
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      a.navbar-brand(href='/') Scoreboard
+    .container-fluid
+      .row
+        .col-sm-3.col-md-2.sidebar
+          ul.nav.nav-sidebar
+            li: a(href='/') Overview
+            li: a(href='/score') Scores
+            li: a(href='/score/add') Add Score
+            li: a(href='/score/game') Games
+            li: a(href='/player') Players
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+          block content
