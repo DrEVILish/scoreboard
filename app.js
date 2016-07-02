@@ -8,7 +8,7 @@ var mysql =require('mysql');
 
 var sql = mysql.createPool({
   connectionLimit: 10,
-  host: "192.168.1.150",
+  host: "mariadb",
   port: "3307",
   user: "score",
   password: "board",
