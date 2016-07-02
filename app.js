@@ -7,12 +7,11 @@ var bodyParser = require('body-parser');
 var mysql =require('mysql');
 
 var sql = mysql.createPool({
-  connectionLimit: 10,
-  host: "mariadb",
-  port: "3307",
-  user: "score",
-  password: "board",
-  database: "scoreboard"
+  host: 'mariadb',
+  port: 3307,
+  user: 'score',
+  password: 'board',
+  database: 'scoreboard'
 });
 
 var routes = require('./routes/index');
