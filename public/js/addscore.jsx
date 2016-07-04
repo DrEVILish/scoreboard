@@ -387,7 +387,7 @@ var AddScoreBox = React.createClass({
     var scores = this.state.scores;
     var gameid = this.refs.gameSelect.state.gameid;
     var date = this.state.date;
-    if(!gameid || !(scores.length > 0)){
+    if(!gameid || !(scores.length > 1)){
       return;
     }
     this.postNewScores(scores, date, gameid, ()=>{

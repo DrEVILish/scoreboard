@@ -6,5 +6,5 @@ window.ReactBootstrap = require('react-bootstrap');
 window.DateRangePicker = require('react-bootstrap-daterangepicker');
 window.Victory = require('victory');
 require('babel-core/browser');
-console.log('IU hate maths');
+
 require('./reacttowindow.js').fix(['Victory','ReactBootstrap']);

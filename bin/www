@@ -12,6 +12,7 @@ var fs = require('fs');
 var watchify = require('watchify');
 var path = require('path');
 
+var serverStarted = false;
 
 if (app.get('env') === 'development') {
   var b = browserify({
@@ -46,7 +47,9 @@ if (app.get('env') === 'development') {
 function writeBundle(data){
   fs.writeFile(path.join('public','js','dist','bundle.js'), data, (err)=>{
     if(err) throw err;
-    startServer();
+    if(serverStarted == false) {
+      startServer();
+    }
   });
 }
 
@@ -80,6 +83,7 @@ var server = http.createServer(app);
  */
 function startServer(){
   server.listen(port);
+  serverStarted = true; 
   console.log('server started');
 }
 server.on('error', onError);
