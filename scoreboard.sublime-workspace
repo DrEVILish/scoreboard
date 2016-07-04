@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"host",
+				"hostSQL"
+			],
+			[
 				"player",
 				"playerRows"
 			],
@@ -252,11 +256,27 @@
 	"buffers":
 	[
 		{
-			"file": "routes/api.js",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 3930,
-				"line_ending": "Windows"
+				"buffer_size": 887,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1799,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bin/www",
+			"settings":
+			{
+				"buffer_size": 2523,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -314,22 +334,25 @@
 	"expanded_folders":
 	[
 		"/C/Users/drevilish/Documents/scoreboard",
+		"/C/Users/drevilish/Documents/scoreboard/bin",
 		"/C/Users/drevilish/Documents/scoreboard/public",
-		"/C/Users/drevilish/Documents/scoreboard/public/css",
 		"/C/Users/drevilish/Documents/scoreboard/public/js",
-		"/C/Users/drevilish/Documents/scoreboard/public/js/dist",
-		"/C/Users/drevilish/Documents/scoreboard/routes",
-		"/C/Users/drevilish/Documents/scoreboard/views"
+		"/C/Users/drevilish/Documents/scoreboard/public/js/dist"
 	],
 	"file_history":
 	[
+		"/C/Users/drevilish/Documents/scoreboard/public/js/dist/main.js",
+		"/C/Users/drevilish/Documents/scoreboard/public/css/gly-spin.css",
+		"/C/Users/drevilish/Documents/scoreboard/nodemon.json",
+		"/C/Users/drevilish/Documents/scoreboard/public/js/dist/bundle.js",
+		"/C/Users/drevilish/Documents/scoreboard/app.js",
+		"/C/Users/drevilish/Documents/scoreboard/routes/api.js",
 		"/W/scoreboard/Dockerfile",
+		"/W/scoreboard/.gitignore",
 		"/C/Users/drevilish/Documents/scoreboard/public/js/addscore.jsx",
 		"/C/Users/drevilish/Documents/scoreboard/public/js/score.jsx",
 		"/C/Users/drevilish/Documents/scoreboard/public/js/home.jsx",
-		"/C/Users/drevilish/Documents/scoreboard/routes/api.js",
 		"/C/Users/drevilish/Documents/scoreboard/public/js/dist/reacttowindow.js",
-		"/C/Users/drevilish/Documents/scoreboard/public/js/dist/main.js",
 		"/C/Users/drevilish/Documents/scoreboard/routes/index.js",
 		"/C/Users/drevilish/Documents/scoreboard/public/js/dist/victoryfix.js",
 		"/C/Users/drevilish/Documents/scoreboard/public/js/dist/reacttowindowfix.js",
@@ -380,6 +403,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"var",
 			".id",
 			"<td>",
 			"t",
@@ -404,6 +428,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"const",
 			"",
 			"togglePlayerById",
 			""
@@ -417,24 +442,54 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "routes/api.js",
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3930,
+						"buffer_size": 887,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2633,
-								2633
+								156,
+								156
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1799,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								503,
+								503
 							]
 						],
 						"settings":
@@ -443,11 +498,41 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 31.0,
-						"translation.y": 997.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "bin/www",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2523,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								225,
+								225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

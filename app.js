@@ -1,18 +1,10 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mysql =require('mysql');
-
-var sql = mysql.createPool({
-  host: 'mariadb',
-  port: 3307,
-  user: 'score',
-  password: 'board',
-  database: 'scoreboard'
-});
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
 
 var routes = require('./routes/index');
 var player = require('./routes/player');
@@ -20,6 +12,23 @@ var score = require('./routes/score');
 var api = require('./routes/api');
 
 var app = express();
+
+if (app.get('env') === 'development') {
+  var portSQL = 3307
+  var hostSQL = '192.168.1.150'
+}else{
+  var portSQL = 3306
+  var hostSQL = 'mariadb'
+}
+
+const sql = mysql.createPool({
+  connectionLimit: 10,
+  host: hostSQL,
+  port: portSQL,
+  user: "score",
+  password: "board",
+  database: "scoreboard"
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -55,6 +64,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
+  console.log('DEV Mode');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -63,16 +73,6 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
 
 
 module.exports = app;

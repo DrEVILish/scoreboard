@@ -7,6 +7,46 @@
 var app = require('../app');
 var debug = require('debug')('scoreboard:server');
 var http = require('http');
+var browserify = require('browserify');
+var fs = require('fs');
+var watchify = require('watchify');
+
+
+if (app.get('env') === 'development') {
+  var b = browserify({
+    entries: ['public/js/dist/main.js'],
+    cache: {},
+    packageCache: {},
+    plugin: [watchify]
+  });
+
+  b.on('update', bundle);
+  bundle();
+
+  function bundle() {
+    b.transform("babelify", {presets: ["es2015","react"]})
+     .bundle()
+     .pipe(fs.createWriteStream('public/js/dist/bundle.js'));
+  }
+}else{
+  var b = browserify({
+    entries: ['public/js/dist/main.js']
+  }).transform("babelify", {presets: ["es2015","react"]})
+  .transform({global: true}, 'uglifyify')
+  .bundle()
+  .pipe(fs.createWriteStream('public/js/dist/bundle.js'));
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
+});
+
 
 /**
  * Get port from environment and store in Express.
